@@ -23,6 +23,7 @@
 html {
   scroll-timeline: --portfolio-scroll block;
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
 }
 
 body {
@@ -160,13 +161,19 @@ button {
   margin: 0 auto;
 }
 
+[data-section] {
+  scroll-margin-top: 0;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
-  gap: clamp(28px, 5vw, 72px);
+  grid-template-rows: auto auto;
+  column-gap: clamp(28px, 5vw, 72px);
+  row-gap: 24px;
   align-items: center;
-  min-height: calc(100svh - 92px);
-  padding: clamp(44px, 6vw, 86px) 0 72px;
+  min-height: clamp(720px, calc(100svh - 92px), 900px);
+  padding: clamp(38px, 5vw, 72px) 0 clamp(48px, 5vw, 64px);
 }
 
 .hero__content,
@@ -198,11 +205,12 @@ h2 {
   font-family: "Archivo Black", Inter, sans-serif;
   letter-spacing: 0;
   line-height: 0.94;
+  text-wrap: balance;
 }
 
 h1 {
   max-width: 790px;
-  font-size: clamp(3.15rem, 7.8vw, 7.6rem);
+  font-size: clamp(3rem, 7vw, 6.9rem);
   text-transform: uppercase;
 }
 
@@ -261,9 +269,11 @@ h3 {
 
 .signal-grid {
   display: grid;
+  grid-column: 1;
+  grid-row: 2;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 46px;
+  margin-top: 10px;
 }
 
 .signal-grid article,
@@ -279,7 +289,7 @@ h3 {
 }
 
 .signal-grid article {
-  min-height: 126px;
+  min-height: 112px;
   padding: 16px;
 }
 
@@ -300,7 +310,11 @@ h3 {
 
 .hero__visual {
   position: relative;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: start;
   min-height: 620px;
+  padding-top: clamp(24px, 4vw, 56px);
 }
 
 .profile-frame {
@@ -371,7 +385,7 @@ h3 {
 
 .orbit-card--top {
   top: 30%;
-  left: -34px;
+  left: -58px;
 }
 
 .orbit-card--bottom {
@@ -425,7 +439,8 @@ h3 {
 }
 
 .feature-visual {
-  aspect-ratio: 16 / 6.6;
+  width: 100%;
+  height: clamp(270px, 28vw, 380px);
 }
 
 .feature-visual figcaption {
@@ -526,22 +541,30 @@ h3 {
 
 .project-card {
   display: grid;
-  grid-template-columns: minmax(220px, 0.52fr) minmax(150px, 0.32fr) minmax(0, 0.84fr) minmax(230px, 0.58fr);
-  gap: 24px;
+  grid-template-columns: minmax(270px, 0.34fr) minmax(0, 1fr);
+  grid-template-areas:
+    "image meta"
+    "image title"
+    "image summary"
+    "image list";
+  gap: 12px 28px;
   align-items: start;
-  min-height: 220px;
+  min-height: 0;
   padding: clamp(20px, 4vw, 32px);
 }
 
 .project-card__image {
   position: relative;
-  min-height: 178px;
+  grid-area: image;
+  align-self: stretch;
+  min-height: 260px;
   overflow: hidden;
   border-radius: var(--radius);
   background: #11151f;
 }
 
 .project-card__meta {
+  grid-area: meta;
   width: fit-content;
   padding: 7px 10px;
   border-radius: var(--radius);
@@ -552,14 +575,24 @@ h3 {
   text-transform: uppercase;
 }
 
+.project-card h3 {
+  grid-area: title;
+  max-width: 720px;
+  font-size: clamp(1.3rem, 1.6vw, 1.62rem);
+}
+
 .project-card p {
+  grid-area: summary;
+  max-width: 760px;
   margin: 0;
   color: var(--muted);
 }
 
 .project-card ul {
+  grid-area: list;
   display: grid;
-  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 18px;
   margin: 0;
   padding-left: 18px;
   color: var(--muted);
@@ -572,7 +605,8 @@ h3 {
 }
 
 .interest-showcase {
-  aspect-ratio: 16 / 6.8;
+  width: 100%;
+  height: clamp(270px, 29vw, 390px);
   margin-bottom: 20px;
 }
 
@@ -691,8 +725,25 @@ h3 {
     min-height: auto;
   }
 
+  .hero__content,
+  .hero__visual,
+  .signal-grid {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
   .hero__visual {
     min-height: 560px;
+    padding-top: 0;
+  }
+
+  .orbit-card--top {
+    top: 32%;
+    left: 12px;
+  }
+
+  .orbit-card--bottom {
+    right: 12px;
   }
 
   .skill-matrix {
@@ -701,58 +752,67 @@ h3 {
 
   .project-card {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "meta"
+      "title"
+      "summary"
+      "list";
   }
 
   .project-card__image {
     min-height: 240px;
   }
+
+  .project-card ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 680px) {
+  html {
+    scroll-padding-top: 104px;
+  }
+
+  [data-section] {
+    scroll-margin-top: 0;
+  }
+
   .site-header {
     top: 8px;
-    display: grid;
-    grid-template-columns: 40px minmax(0, 1fr);
-    grid-template-areas:
-      "brand ."
-      "nav nav";
+    display: flex;
+    align-items: start;
     gap: 8px;
     width: calc(100vw - 16px);
     max-width: calc(100vw - 16px);
+    min-height: 80px;
     margin-top: 8px;
+    padding: 8px;
     overflow: hidden;
   }
 
   .brand-mark {
-    grid-area: brand;
-  }
-
-  .brand-mark {
+    flex: 0 0 auto;
     width: 40px;
     height: 40px;
   }
 
-  .site-nav a {
-    min-height: 34px;
-    padding: 7px 6px;
-    font-size: 0.72rem;
-    line-height: 1.1;
-    text-align: center;
-    white-space: normal;
-  }
-
   .site-nav {
-    grid-area: nav;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 4px;
-    width: 100%;
-    max-width: 100%;
+    flex: 1;
+    max-width: calc(100% - 48px);
     overflow: visible;
   }
 
-  .site-nav a:last-child {
-    grid-column: 1 / -1;
+  .site-nav a {
+    min-height: 30px;
+    padding: 6px 4px;
+    font-size: 0.66rem;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .section-band {
@@ -761,15 +821,20 @@ h3 {
   }
 
   .hero {
-    padding-top: 42px;
+    row-gap: 24px;
+    padding-top: 28px;
+    padding-bottom: 48px;
   }
 
   h1 {
-    font-size: clamp(2.15rem, 13.1vw, 3.32rem);
+    font-size: clamp(2.1rem, 12.2vw, 3.05rem);
   }
 
   h2 {
-    font-size: clamp(2rem, 11vw, 3rem);
+    max-width: 100%;
+    font-size: clamp(1.78rem, 8.8vw, 2.36rem);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
   }
 
   .hero__actions,
@@ -787,12 +852,21 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .signal-grid {
+    margin-top: 2px;
+  }
+
   .hero__visual {
-    min-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    min-height: 0;
   }
 
   .profile-frame {
-    min-height: 480px;
+    grid-column: 1 / -1;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
   }
 
   .profile-frame::before {
@@ -802,10 +876,19 @@ h3 {
   .profile-frame img {
     inset: 0;
     width: 100%;
+    height: 100%;
+    object-position: center top;
+  }
+
+  .orbit-card {
+    position: static;
+    width: 100%;
+    padding: 12px;
   }
 
   .feature-visual,
   .interest-showcase {
+    height: auto;
     aspect-ratio: 1 / 0.86;
   }
 
@@ -821,14 +904,9 @@ h3 {
     min-height: 210px;
   }
 
-  .orbit-card--top {
-    top: 34%;
-    left: 6px;
-  }
-
-  .orbit-card--bottom {
-    right: 6px;
-    bottom: 7%;
+  .about__intro {
+    font-size: 1.08rem;
+    line-height: 1.45;
   }
 
   .skill-card {

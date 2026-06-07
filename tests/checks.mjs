@@ -49,6 +49,15 @@ const prompts = read("PROMPTS.md");
   assert(html.includes(text), `index.html should include ${text}`);
 });
 
+const heroVisualIndex = html.indexOf('<div class="hero__visual"');
+const signalGridIndex = html.indexOf('<div class="signal-grid"');
+assert(heroVisualIndex > -1, "index.html should include the hero visual block");
+assert(signalGridIndex > -1, "index.html should include the signal grid");
+assert(
+  heroVisualIndex < signalGridIndex,
+  "hero portrait should appear before signal cards in the mobile reading order"
+);
+
 [
   "assets/ai-lab.png",
   "assets/local-infra.png",
@@ -65,9 +74,21 @@ const prompts = read("PROMPTS.md");
   "scroll-timeline",
   "mix-blend-mode",
   "project-card__image",
+  "scroll-padding-top",
+  "scroll-margin-top",
 ].forEach((text) => {
   assert(css.includes(text), `styles.css should include ${text}`);
 });
+
+assert(
+  /@media \(max-width: 680px\)[\s\S]*\.orbit-card\s*{[\s\S]*position:\s*static/.test(css),
+  "mobile orbit cards should be placed outside the portrait image"
+);
+
+assert(
+  !/grid-template-areas:\s*"brand \."/.test(css),
+  "mobile header should not expand into a tall multi-row grid"
+);
 
 [
   "const canvas",
