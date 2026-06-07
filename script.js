@@ -1,31 +1,9 @@
-const root = document.documentElement;
 const canvas = document.querySelector("#neural-field");
 const ctx = canvas.getContext("2d");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const navLinks = [...document.querySelectorAll(".site-nav a")];
 const sections = [...document.querySelectorAll("[data-section]")];
 const revealItems = [...document.querySelectorAll("[data-reveal]")];
-const profilePhoto = document.querySelector("#profile-photo");
-const themeToggle = document.querySelector(".theme-toggle");
-
-const storedTheme = localStorage.getItem("portfolio-theme");
-if (storedTheme) {
-  root.dataset.theme = storedTheme;
-}
-
-themeToggle.addEventListener("click", () => {
-  const next = root.dataset.theme === "light" ? "dark" : "light";
-  root.dataset.theme = next;
-  localStorage.setItem("portfolio-theme", next);
-});
-
-fetch("assets/profile-photo.jpg", { method: "HEAD" })
-  .then((response) => {
-    if (response.ok) {
-      profilePhoto.src = "assets/profile-photo.jpg";
-    }
-  })
-  .catch(() => {});
 
 const revealObserver = new IntersectionObserver(
   (entries) => {

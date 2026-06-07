@@ -1,35 +1,62 @@
-# Portfolio personal - Diego Gabriel Cortez Loayza
+# Portfolio Personal - Diego Gabriel Cortez Loayza
 
-CV/portfolio web desarrollado con HTML, CSS y JavaScript como entrega de la tarea "Desarrollo Web Personal con Vibe Coding".
+CV/portfolio web personal desarrollado para la tarea **Desarrollo Web Personal con Vibe Coding**.
 
-## Contenido
+Sitio publicado: https://6a24f64e8ea7c34e3c1237df--comforting-cupcake-5eff10.netlify.app/
 
-- Nombre completo, carrera, descripcion personal, habilidades, intereses, contacto y redes.
-- Seccion de proyectos con enfoque en IA, homeservers, SaaS y digitalizacion para pymes.
-- Diseño responsive para escritorio, tablet y movil.
-- Animacion canvas, navegacion activa, modo claro/oscuro y carga automatica de foto personal.
+Repositorio: https://github.com/GaboC5/progra_exam2
 
-## Como usar la foto real
+## Descripcion
 
-La pagina incluye un avatar SVG de respaldo. Para usar la foto personal, guarda la imagen como:
+El proyecto presenta el perfil profesional de Diego Gabriel Cortez Loayza, estudiante de **Negocios Digitales**, con enfoque en inteligencia artificial aplicada, infraestructura personal, automatizacion para pymes, Linux, redes, IoT y cultura maker.
+
+La pagina busca cumplir la rubrica de la tarea y elevar la presentacion con una identidad visual propia, fotografia personal, imagenes generadas con IA, animacion interactiva y estructura responsive.
+
+## Contenido incluido
+
+- Nombre completo, carrera, descripcion personal, habilidades, intereses, contacto y red social.
+- Secciones de proyectos: homeserver, fine tuning con modelos open weights y prototipos SaaS para negocios locales.
+- Imagenes de apoyo generadas con IA para reforzar cada bloque de contenido.
+- Diseno responsive para desktop y movil.
+- Animacion canvas, navegacion activa y efectos visuales sutiles.
+- Evidencias en `evidencias/` y prompts documentados en `PROMPTS.md`.
+
+## Tecnologias
+
+- HTML semantico
+- CSS personalizado
+- JavaScript
+- OpenAI Codex y generacion de imagenes con IA
+- Netlify para publicacion
+
+## Estructura
 
 ```text
-assets/profile-photo.jpg
+.
+├── assets/
+│   ├── profile-photo.jpg
+│   ├── ai-lab.png
+│   ├── local-infra.png
+│   ├── digital-business.png
+│   └── maker-rural.png
+├── evidencias/
+├── entregables/entrega-diego-cortez.pdf
+├── tools/build-deliverable.mjs
+├── index.html
+├── styles.css
+├── script.js
+├── PROMPTS.md
+├── netlify.toml
+└── tests/checks.mjs
 ```
-
-Al publicarse en Netlify, `script.js` la detecta y reemplaza automaticamente el SVG.
-
-## Publicacion en Netlify
-
-1. Entrar a Netlify.
-2. Crear un nuevo sitio con "Deploy manually" o subir esta carpeta.
-3. Verificar que el sitio cargue `index.html`.
-4. Abrir el enlace publico y revisar la version movil.
 
 ## Verificacion local
 
 ```bash
 node tests/checks.mjs
+node --check script.js
 ```
 
-El test valida que existan los archivos principales y que la pagina incluya el contenido exigido por la rubrica.
+## Publicacion
+
+El sitio esta publicado en Netlify. Cada push a la rama `main` actualiza la version publicada automaticamente.

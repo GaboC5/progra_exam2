@@ -32,10 +32,6 @@
         <a href="#intereses">Intereses</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Cambiar tema">
-        <span class="theme-toggle__sun" aria-hidden="true"></span>
-        <span class="theme-toggle__moon" aria-hidden="true"></span>
-      </button>
     </header>
 
     <main>
@@ -77,13 +73,9 @@
           <div class="profile-frame">
             <img
               id="profile-photo"
-              src="assets/profile-card.svg"
-              alt="Retrato estilizado de Diego Gabriel Cortez Loayza"
+              src="assets/profile-photo.jpg"
+              alt="Fotografia personal de Diego Gabriel Cortez Loayza"
             />
-            <div class="profile-frame__label">
-              <span>Especialista en</span>
-              <strong>Soluciones Digitales e Inteligencia Artificial</strong>
-            </div>
           </div>
           <div class="orbit-card orbit-card--top">
             <span>GLM 4.7</span>
@@ -127,6 +119,15 @@
           <p class="eyebrow">Stack y habilidades</p>
           <h2>Un perfil hibrido: IA, sistemas, negocio y prototipado.</h2>
         </div>
+        <figure class="feature-visual">
+          <img
+            src="assets/ai-lab.png"
+            alt="Laboratorio visual de IA con pantallas, modelos y equipo de computo"
+          />
+          <figcaption>
+            Aprendizaje practico con modelos, datos, inferencia e infraestructura.
+          </figcaption>
+        </figure>
         <div class="skill-matrix">
           <article class="skill-card">
             <span class="skill-card__index">01</span>
@@ -167,10 +168,16 @@
       <section class="projects section-band" id="proyectos" data-section data-reveal>
         <div class="section-heading">
           <p class="eyebrow">Proyectos destacados</p>
-          <h2>Experimentos creibles, utiles y con enfoque profesional.</h2>
+          <h2>Proyectos tecnicos, utiles y con enfoque profesional.</h2>
         </div>
         <div class="project-timeline">
           <article class="project-card">
+            <div class="project-card__image">
+              <img
+                src="assets/local-infra.png"
+                alt="Servidor local con switches, almacenamiento y luces de estado"
+              />
+            </div>
             <div class="project-card__meta">Home lab / Linux / Redes</div>
             <h3>Homeserver con servicios locales tipo streaming DIY</h3>
             <p>
@@ -186,6 +193,12 @@
             </ul>
           </article>
           <article class="project-card">
+            <div class="project-card__image">
+              <img
+                src="assets/ai-lab.png"
+                alt="Estacion de trabajo para entrenamiento e inferencia de modelos de IA"
+              />
+            </div>
             <div class="project-card__meta">IA / Cloud GPUs / Datasets</div>
             <h3>Fine tuning experimental de GLM 4.7</h3>
             <p>
@@ -201,11 +214,17 @@
             </ul>
           </article>
           <article class="project-card">
+            <div class="project-card__image">
+              <img
+                src="assets/digital-business.png"
+                alt="Paneles SaaS y flujos digitales para negocios locales"
+              />
+            </div>
             <div class="project-card__meta">SaaS / Apps / Automatizacion</div>
             <h3>Prototipos para negocios locales y pymes</h3>
             <p>
               Conceptos de aplicaciones moviles y servicios tipo SaaS para
-              digitalizar flujos simples: registro de clientes, inventario,
+              digitalizar flujos simples: registro de clientes, stock,
               respuestas automaticas, reportes y asistencia con IA.
             </p>
             <ul>
@@ -222,6 +241,12 @@
           <p class="eyebrow">Intereses</p>
           <h2>La tecnologia tambien se entiende mejor tocando mundo real.</h2>
         </div>
+        <figure class="interest-showcase">
+          <img
+            src="assets/maker-rural.png"
+            alt="Taller maker con impresion 3D, sensores, agricultura e IoT"
+          />
+        </figure>
         <div class="interest-cloud" aria-label="Pasatiempos e intereses">
           <span>Agricultura</span>
           <span>Vida rural</span>
