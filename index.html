@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CV y portfolio personal de Diego Gabriel Cortez Loayza, estudiante de Negocios Digitales especializado en IA aplicada, sistemas locales, automatizacion y proyectos maker."
+    />
+    <meta name="theme-color" content="#0b0d12" />
+    <title>Diego Gabriel Cortez Loayza | Negocios Digitales e IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <canvas id="neural-field" aria-hidden="true"></canvas>
+
+    <header class="site-header" data-reveal>
+      <a class="brand-mark" href="#inicio" aria-label="Ir al inicio">
+        <span>DG</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegacion principal">
+        <a href="#sobre-mi">Sobre mi</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#intereses">Intereses</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Cambiar tema">
+        <span class="theme-toggle__sun" aria-hidden="true"></span>
+        <span class="theme-toggle__moon" aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero section-band" id="inicio" data-section data-reveal>
+        <div class="hero__content">
+          <p class="eyebrow">Negocios Digitales / IA Aplicada / Maker</p>
+          <h1>Diego Gabriel Cortez Loayza</h1>
+          <p class="hero__lead">
+            Diseño soluciones digitales con criterio de negocio, inteligencia
+            artificial y mentalidad experimental: desde prototipos con modelos
+            open weights hasta automatizaciones para pymes y servicios locales.
+          </p>
+          <div class="hero__actions" aria-label="Acciones principales">
+            <a class="button button--primary" href="#proyectos">
+              Ver proyectos
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="button button--secondary" href="mailto:gabodcortez@gmail.com">
+              Contactar
+            </a>
+          </div>
+          <div class="signal-grid" aria-label="Areas de enfoque">
+            <article>
+              <strong>IA</strong>
+              <span>Fine tuning, inferencia y modelos locales</span>
+            </article>
+            <article>
+              <strong>Infra</strong>
+              <span>Linux, redes, servidores y servicios DIY</span>
+            </article>
+            <article>
+              <strong>Negocio</strong>
+              <span>Automatizacion para equipos y pymes</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-label="Retrato y especialidad">
+          <div class="profile-frame">
+            <img
+              id="profile-photo"
+              src="assets/profile-card.svg"
+              alt="Retrato estilizado de Diego Gabriel Cortez Loayza"
+            />
+            <div class="profile-frame__label">
+              <span>Especialista en</span>
+              <strong>Soluciones Digitales e Inteligencia Artificial</strong>
+            </div>
+          </div>
+          <div class="orbit-card orbit-card--top">
+            <span>GLM 4.7</span>
+            <strong>Fine tuning cloud</strong>
+          </div>
+          <div class="orbit-card orbit-card--bottom">
+            <span>Home lab</span>
+            <strong>Servicios locales</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section-band" id="sobre-mi" data-section data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">Sobre mí</p>
+          <h2>Perfil entre estrategia digital, hardware y experimentacion.</h2>
+        </div>
+        <div class="about__grid">
+          <p class="about__intro">
+            Soy estudiante de Negocios Digitales con interes fuerte por la
+            inteligencia artificial aplicada, la infraestructura personal y la
+            adopcion tecnologica en negocios reales. Me gusta conectar lo
+            practico con lo tecnico: entender una necesidad, prototipar rapido,
+            medir si aporta valor y mejorar la solucion con herramientas
+            modernas.
+          </p>
+          <div class="about__panel">
+            <p>
+              Trabajo explorando modelos open weights, flujos de inferencia,
+              datasets curados, automatizaciones con IA y servicios montados en
+              Linux. Mi enfoque combina curiosidad maker, pensamiento de
+              producto y una obsesion sana por hacer que la tecnologia sea util
+              para personas y empresas pequenas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills section-band" id="habilidades" data-section data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">Stack y habilidades</p>
+          <h2>Un perfil hibrido: IA, sistemas, negocio y prototipado.</h2>
+        </div>
+        <div class="skill-matrix">
+          <article class="skill-card">
+            <span class="skill-card__index">01</span>
+            <h3>Inteligencia Artificial</h3>
+            <p>
+              Fine tuning, Hugging Face, inferencia, modelos locales, datasets
+              curados, evaluacion de respuestas y adaptacion de modelos open
+              weights.
+            </p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-card__index">02</span>
+            <h3>Linux e infraestructura</h3>
+            <p>
+              Home servers, contenedores, redes domesticas, servicios locales,
+              backups, automatizacion y despliegues ligeros.
+            </p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-card__index">03</span>
+            <h3>Negocios digitales</h3>
+            <p>
+              Diagnostico de procesos, herramientas SaaS, integraciones,
+              automatizacion para pymes y mejora de operaciones con IA.
+            </p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-card__index">04</span>
+            <h3>Maker y hardware</h3>
+            <p>
+              IoT experimental, impresion 3D, hardware, sistemas operativos,
+              prototipos fisicos y aprendizaje por construccion.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="projects section-band" id="proyectos" data-section data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">Proyectos destacados</p>
+          <h2>Experimentos creibles, utiles y con enfoque profesional.</h2>
+        </div>
+        <div class="project-timeline">
+          <article class="project-card">
+            <div class="project-card__meta">Home lab / Linux / Redes</div>
+            <h3>Homeserver con servicios locales tipo streaming DIY</h3>
+            <p>
+              Laboratorio personal con servicios autoalojados para musica,
+              video, archivos y paneles de administracion. Enfoque en aprender
+              redes, contenedores, almacenamiento, seguridad basica y acceso
+              remoto controlado.
+            </p>
+            <ul>
+              <li>Organizacion de servicios por contenedores.</li>
+              <li>Pruebas de rendimiento y disponibilidad en red local.</li>
+              <li>Documentacion de mantenimiento y respaldos.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="project-card__meta">IA / Cloud GPUs / Datasets</div>
+            <h3>Fine tuning experimental de GLM 4.7</h3>
+            <p>
+              Entrenamiento exploratorio en GPUs rentadas para adaptar un modelo
+              open weights a tareas concretas usando datasets curados. El foco
+              fue comparar calidad de respuesta, costo de inferencia y
+              consistencia del modelo.
+            </p>
+            <ul>
+              <li>Preparacion y limpieza de datos de entrenamiento.</li>
+              <li>Monitoreo de metricas, costos y checkpoints.</li>
+              <li>Pruebas de inferencia para escenarios especificos.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="project-card__meta">SaaS / Apps / Automatizacion</div>
+            <h3>Prototipos para negocios locales y pymes</h3>
+            <p>
+              Conceptos de aplicaciones moviles y servicios tipo SaaS para
+              digitalizar flujos simples: registro de clientes, inventario,
+              respuestas automaticas, reportes y asistencia con IA.
+            </p>
+            <ul>
+              <li>Mapeo de problemas reales antes de proponer tecnologia.</li>
+              <li>Interfaces rapidas para validar ideas con usuarios.</li>
+              <li>Automatizacion de tareas repetitivas con herramientas IA.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="interests section-band" id="intereses" data-section data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">Intereses</p>
+          <h2>La tecnologia tambien se entiende mejor tocando mundo real.</h2>
+        </div>
+        <div class="interest-cloud" aria-label="Pasatiempos e intereses">
+          <span>Agricultura</span>
+          <span>Vida rural</span>
+          <span>IA aplicada</span>
+          <span>Computacion</span>
+          <span>Hardware</span>
+          <span>Sistemas operativos</span>
+          <span>Impresion 3D</span>
+          <span>Maker</span>
+          <span>Basketball</span>
+          <span>Futbol</span>
+          <span>Cocina</span>
+          <span>IoT</span>
+        </div>
+      </section>
+
+      <section class="contact section-band" id="contacto" data-section data-reveal>
+        <div class="contact__content">
+          <p class="eyebrow">Contacto</p>
+          <h2>Disponible para proyectos, colaboraciones y experimentos serios.</h2>
+          <p>
+            Me interesan los retos donde la IA, los sistemas y el criterio de
+            negocio puedan convertir una idea en una solucion que funcione.
+          </p>
+        </div>
+        <div class="contact__links">
+          <a href="mailto:gabodcortez@gmail.com" aria-label="Enviar correo a Diego">
+            <span>Email</span>
+            <strong>gabodcortez@gmail.com</strong>
+          </a>
+          <a
+            href="https://www.instagram.com/gabo.cortez.l"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Abrir Instagram de Diego"
+          >
+            <span>Instagram</span>
+            <strong>@gabo.cortez.l</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Diego Gabriel Cortez Loayza</span>
+      <span>CV/Portfolio creado con Vibe Coding, IA y criterio propio.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
